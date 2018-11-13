@@ -9,7 +9,7 @@ Game* g_gmae = 0;
 int main(int argc, char* argv[])
 {
 	g_gmae = new Game();
-	g_gmae->init("Chapter4", 100, 100, 640, 480, false);
+	g_gmae->init("Chapter5", 100, 100, 640, 480, false);
 
 	while (g_gmae->running())
 	{

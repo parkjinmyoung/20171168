@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <SDL_image.h>
 
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
@@ -12,7 +13,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		}
 
 
-		SDL_Surface* pTempSurface = SDL_LoadBMP("assets/animate.bmp");
+		SDL_Surface* pTempSurface = IMG_Load("assets/animate-alpha.png");
+
+		SDL_SetRenderDrawColor(m_pRenderer, 255, 0, 0, 255);
 
 		m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pTempSurface);
 

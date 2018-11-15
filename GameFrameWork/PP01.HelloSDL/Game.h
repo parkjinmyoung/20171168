@@ -7,7 +7,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include <vector>
-
+#include "InputHandler.h"
 class Game
 {
 public:
@@ -29,6 +29,7 @@ public:
 	void update();
 	void handleEvents();
 	void clean();
+	void quit();
 	bool running() { return m_bRunning; }
 
 	int m_currentFrame;

@@ -88,17 +88,10 @@ void Game::clean()
 
 void Game::handleEvents()
 {
-	SDL_Event event;
-	if (SDL_PollEvent(&event))
-	{
-		switch (event.type)
-		{
-		case SDL_QUIT:
-			m_bRunning = false;
-			break;
-		default:
-			break;
-		}
+	TheInputHandler::Instance()->Update();
+}
 
-	}
+void Game::quit()
+{
+	m_bRunning = false;
 }

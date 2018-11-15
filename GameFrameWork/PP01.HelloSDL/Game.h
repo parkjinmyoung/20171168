@@ -38,9 +38,6 @@ public:
 	SDL_Renderer* getRenderer() const { return m_pRenderer; }
 
 
-	GameObject* m_go;
-	GameObject* m_player;
-	GameObject* m_enemy;
 
 private:
 

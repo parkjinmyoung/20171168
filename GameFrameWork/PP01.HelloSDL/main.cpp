@@ -3,22 +3,27 @@
 #include "Game.h"
 
 
-Game* g_gmae = 0;
-
-
 int main(int argc, char* argv[])
 {
-	g_gmae = new Game();
-	g_gmae->init("Chapter8", 100, 100, 640, 480, false);
-
-	while (g_gmae->running())
+	std::cout << "game init attempt...\n";
+	if (TheGame::Instance()->init("Chapter 11", 100, 100, 640, 480, false))
 	{
-		g_gmae->handleEvents();
-		g_gmae->update();
-		g_gmae->render();
-		SDL_Delay(10);
+		std::cout << "game init success!\n";
+		while (TheGame::Instance()->running())
+		{
+			TheGame::Instance()->handleEvents();
+			TheGame::Instance()->update();
+			TheGame::Instance()->render();
+			SDL_Delay(10);
+		}
+	}
+	//thegame인스턴스실패
+	else {
+		std::cout << "game init failure - " << SDL_GetError() << "\n";
+		return -1;
 	}
 
-	g_gmae->clean();
+	std::cout << "game closing...\n";
+	TheGame::Instance()->clean();
 	return 0;
 }

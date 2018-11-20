@@ -8,6 +8,10 @@
 #include "Enemy.h"
 #include <vector>
 #include "InputHandler.h"
+#include "GameStateMachine.h"
+#include "MenuState.h"
+#include "GameState.h"
+#include "PlayState.h"
 class Game
 {
 public:
@@ -38,9 +42,12 @@ public:
 
 	SDL_Renderer* getRenderer() const { return m_pRenderer; }
 
-
+	GameStateMachine* m_pGameStateMachine;
 
 private:
+
+	
+
 
 	static Game* s_pInstance;
 

@@ -7,6 +7,7 @@ private:
 	void handleInput();
 
 public:
+
 	Player(const LoaderParams* pParams);
 	virtual void draw();
 	virtual void update();

@@ -70,7 +70,6 @@ void Game::render()
 	}
 	*/
 	SDL_RenderPresent(m_pRenderer);
-
 }
 
 void Game::update()

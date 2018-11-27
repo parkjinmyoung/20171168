@@ -39,14 +39,16 @@ public:
 
 	int m_currentFrame;
 
-	std::vector<GameObject*> m_gameObjects;
+	//std::vector<GameObject*> m_gameObjects;
 
 	SDL_Renderer* getRenderer() const { return m_pRenderer; }
 
-	
+	GameStateMachine* getStateMachine() { return m_pGameStateMachine; }
+
 private:
 
 	
+
 	GameStateMachine* m_pGameStateMachine;
 
 

@@ -10,18 +10,12 @@ MenuState*MenuState::s_pInstance = 0;
 
 void MenuState::update()
 {
-	for (int i = 0; i < m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->update();
-	}
+	SDLGameState::update();
 }
 
 void MenuState::render()
 {
-	for (int i = 0; i < m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->draw();
-	}
+	SDLGameState::render();
 }
 
 bool MenuState::onEnter()
@@ -68,7 +62,7 @@ bool MenuState::onExit()
 
 void MenuState::s_menuToPlay()
 {
-	TheGame::Instance()->getStateMachine()->changeState(new PlayState());
+	TheGame::Instance()->getStateMachine()->changeState(PlayState::Instance());
 }
 
 

@@ -8,23 +8,20 @@ PlayState*PlayState::s_pInstance = 0;
 void PlayState::update()
 {
 
-	for (int i = 0; i < m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->update();
-	}
+	SDLGameState::update();
 
 	if (checkCollision(
 		dynamic_cast<SDLGameObject*>(m_gameObjects[0]),
 		dynamic_cast<SDLGameObject*>(m_gameObjects[1])))
 	{
 		TheGame::Instance()->getStateMachine()->changeState(
-			new GameOverState());
+			GameOverState::Instance());
 	}
 	else if (TheInputHandler::Instance()->isKeyDown(
 		SDL_SCANCODE_ESCAPE))
 	{
 		TheGame::Instance()->getStateMachine()->changeState(
-			new	PauseState());
+			PauseState::Instance());
 
 	}
 
@@ -32,10 +29,7 @@ void PlayState::update()
 
 void PlayState::render()
 {
-	for (int i = 0; i < m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->draw();
-	}
+	SDLGameState::render();
 }
 
 bool PlayState::onEnter()

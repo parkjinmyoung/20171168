@@ -2,7 +2,7 @@
 #include "GameState.h"
 #include "Game.h"
 #include "GameOverState.h"
-class PlayState : public GameState
+class PlayState : public SDLGameState
 {
 public:
 
@@ -23,6 +23,7 @@ public:
 	virtual bool onExit();
 	virtual std::string getStateID() const { return s_playID; }
 private:
+	PlayState();
 	bool checkCollision(SDLGameObject* p1, SDLGameObject* p2);
 
 	static const std::string s_playID;

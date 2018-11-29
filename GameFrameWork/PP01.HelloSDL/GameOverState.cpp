@@ -2,6 +2,8 @@
 
 const std::string GameOverState::s_gameOverID = "GAMEOVER";
 
+GameOverState*GameOverState::s_pInstance = 0;
+
 
 void GameOverState::s_gameOverToMain()
 {
@@ -54,18 +56,12 @@ bool GameOverState::onEnter()
 
 void GameOverState::update()
 {
-	for (int i = 0; i < m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->update();
-	}
+	SDLGameState::update();
 }
 
 void GameOverState::render()
 {
-	for (int i = 0; i < m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->draw();
-	}
+	SDLGameState::render();
 }
 
 bool GameOverState::onExit()

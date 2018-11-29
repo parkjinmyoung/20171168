@@ -1,9 +1,9 @@
 #pragma once
-#include"GameState.h"
+#include"SDLGameState.h"
 #include "Game.h"
 #include "MenuButton.h"
 
-class MenuState : public GameState
+class MenuState : public SDLGameState
 {
 public:
 	virtual void update();
@@ -24,7 +24,10 @@ public:
 	}
 
 private:
+	MenuState();
+
 	static const std::string s_menuID;
+
 	static MenuState* s_pInstance;
 
 	static void s_menuToPlay();

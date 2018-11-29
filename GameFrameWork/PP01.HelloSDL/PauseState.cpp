@@ -31,6 +31,7 @@ void PauseState::render()
 
 bool PauseState::onEnter()
 {
+
 	if (!TheTextureManager::Instance()->load("assets/resume.png",
 		"resumebutton", TheGame::Instance()->getRenderer())) {
 		return false;
